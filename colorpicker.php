@@ -8,12 +8,14 @@
     $butexe = filter_input(INPUT_POST, 'butexe', FILTER_DEFAULT);
 
     
+    $deg = filter_input(INPUT_POST, 'deg', FILTER_DEFAULT);
     $hvar = filter_input(INPUT_POST, 'hvar', FILTER_DEFAULT);
     $svar = filter_input(INPUT_POST, 'svar', FILTER_DEFAULT);
     $lvar = filter_input(INPUT_POST, 'lvar', FILTER_DEFAULT);
     $ovar = filter_input(INPUT_POST, 'ovar', FILTER_DEFAULT);
 
 
+    $deg = ($deg == "") ? 135 : $deg;
     $hvar = ($hvar == "") ? 30 : (int)$hvar;
     $svar = ($svar == "") ? 30 : (int)$svar;
     $lvar = ($lvar == "") ? 30 : (int)$lvar;
@@ -57,7 +59,8 @@
                 $basecol[2] = $basecol[2] == "" ? 0 : (int)$basecol[2];
                 array_push($basecol,0.95);
             }
-            $newclass = create_css_class("colafter", "#fff", "135deg", $basecol[0], $basecol[1], $basecol[2], $basecol[3], $hvar, $svar, $lvar, 0);
+            
+            $newclass = create_css_class("colafter", "#fff", $deg."deg", $basecol[0], $basecol[1], $basecol[2], $basecol[3], $hvar, $svar, $lvar, 0);
         }
         ?>
 

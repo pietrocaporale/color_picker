@@ -9,5 +9,5 @@ git add .
 git commit -m "$NOTE"
 git branch main
 git push -u origin main
-git log
+#git log
 

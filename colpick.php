@@ -78,6 +78,7 @@
     form.setcolor.value = color_sel;
     form.butcolpicker.value = elm.value;
 
+    form.deg.value = document.getElementById('setdeg').value;
     form.hvar.value = document.getElementById('sethvar').value;
     form.svar.value = document.getElementById('setsvar').value;
     form.lvar.value = document.getElementById('setlvar').value;
@@ -125,6 +126,7 @@
 </script>
 
 <form id='formRestoreColors' method="post" action="<?php echo $root; ?>">
+  <input type="hidden" id="deg" name="deg" value="">
   <input type="hidden" id="hvar" name="hvar" value="">
   <input type="hidden" id="svar" name="svar" value="">
   <input type="hidden" id="lvar" name="lvar" value="">
@@ -135,15 +137,17 @@
   <input type='text' id='color-picker' name='color_picker' value="" />
 </form>
 <div id="boxbuts">
+  <label for="deg">Set deg</label>
+  <input type="number" class="txtnum" id="setdeg" placeholder="deg" min="0" max="360" step="1" value="<?php echo $deg; ?>"><br><br>
   <label>Variation</label><br>
   <label for="hvar">hue</label>
-  <input type="number" class="txtnum" id="sethvar" placeholder="hue" value="<?php echo $hvar; ?>">
+  <input type="number" class="txtnum" id="sethvar" placeholder="hue" min="0" max="360" step="1" value="<?php echo $hvar; ?>">
   <label for="svar">sat</label>
-  <input type="number" class="txtnum" id="setsvar" placeholder="sat" value="<?php echo $svar; ?>">
+  <input type="number" class="txtnum" id="setsvar" placeholder="sat" min="0" max="100" step="1" value="<?php echo $svar; ?>">
   <label for="lvar">lum</label>
-  <input type="number" class="txtnum" id="setlvar" placeholder="lum" value="<?php echo $lvar; ?>">
+  <input type="number" class="txtnum" id="setlvar" placeholder="lum" min="0" max="100" step="1" value="<?php echo $lvar; ?>">
   <label for="ovar">opa</label>
-  <input type="number" class="txtopa" id="setovar" placeholder="opa" step=".01" value="<?php echo $ovar; ?>">
+  <input type="number" class="txtopa" id="setovar" placeholder="opa" min="0" max="1" step=".01" value="<?php echo $ovar; ?>">
 </div>
 <div id="boxbuts">
   <?php echo "set: $setcolor<br><br>"; ?>
