@@ -86,7 +86,6 @@
   }
 </script>
 
-
 <script>
   $(document).ready(function() {
 
@@ -98,11 +97,16 @@
       showSelectionPalette: true,
       showInitial: true,
       showInput: true,
-      //preferredFormat: 'hex',
       preferredFormat: "hsl",
-      palette: [
-        []
+      showPalette: true,
+      palette: [["White", "Black", "Gray"],
+      ["Red", "Yellow", "Blue"], //primary
+      ["Orange", "Green", "Violet"], //secondary
+      ["OrangeRed", "GreenYellow", "MediumVioletRed", "BlueViolet"], //tertiary
+      ["#ec6224","#fdc70f","YellowGreen","#1d96bb","#c31a7f"], //RedOrange,YellowOrange,YellowGreen,BlueGreen,RedViolet
+      ["Lime", "", ""],
       ],
+      //palette: [[]],
       showButtons: false,
       change: function(color) {
         //$(document.body).css('background-color', color)
@@ -150,5 +154,37 @@
 
 
 <?php
-
+/*
+    'Pink'                      => '#FFC0CB',
+    'Brown'                     => '#A52A2A',
+    'Gold'                      => '#FFD700',
+    'Fuchsia'                   => '#FF00FF',
+    'Cyan'                      => '#00FFFF',
+    'Beige'                     => '#F5F5DC',
+    'Ivory'                     => '#FFFFF0',
+    'Khaki'                     => '#F0E68C',
+    'Magenta'                   => '#FF00FF',
+    'Maroon'                    => '#800000',
+    'Lavender'                  => '#E6E6FA',
+    'Lime'                      => '#00FF00',
+    'Navy'                      => '#000080',
+    'Olive'                     => '#808000',
+    'Orchid'                    => '#DA70D6',
+    'Plum'                      => '#DDA0DD',
+    'Purple'                    => '#800080',
+    'Salmon'                    => '#FA8072',
+    'Sienna'                    => '#A0522D',
+    'Silver'                    => '#C0C0C0',
+    'SkyBlue'                   => '#87CEEB',
+    'SpringGreen'               => '#00FF7F',
+    'Tomato'                    => '#FF6347',
+    'Turquoise'                 => '#40E0D0',
+    'Wheat'                     => '#F5DEB3',
+    'WhiteSmoke'                => '#F5F5F5',
+    'YellowGreen'               => '#9ACD32',
+    'Aquamarine'                => '#7FFFD4',
+    'Bisque'                    => '#FFE4C4',
+    'Chocolate'                 => '#D2691E',
+    'Coral'                     => '#FF7F50',
+*/
 ?>
