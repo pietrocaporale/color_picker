@@ -80,18 +80,12 @@
          <?php require "colpick.php"; ?>
      </div>
 
-     <?php
-        ?>
-        <br>
-     <div id="" class="center">
-         <input id="txt" style="<?php echo $style; ?>" class="estext" type="text" value="Text" />
-     </div>
+
      <br>
      <div id="" class="center">
         <?php 
         if (is_array($basecol)) {
             echo "hue:".$basecol[0]." sat:".$basecol[1]." lum:".$basecol[2]." opa:".$basecol[3]."<br>"; 
-            //echo "".print_r($basecol)."<br>";
             //echo "<pre>".print_r($basecol)."</pre>";
         }
         ?>
@@ -103,7 +97,7 @@
         <label for="settextcolor">Set text color</label>
         <input id="settextcolor" class="basic" type="text" value="#fff" />
     </div>
-         
+    <br>         
         <div class="center esdivtb">
             <div id="newcolor" class="newcolor center <?php echo $newclass; ?>"><?php echo $textshow; ?></div>
         </div>

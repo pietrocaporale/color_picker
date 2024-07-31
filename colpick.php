@@ -112,7 +112,6 @@
       //color: 'white',
       preferredFormat: 'hex',
       change: function(color) {
-        //$('.estext').css('background-color', color)
         $(".newcolor").css({ "color": color });
       }
     });
