@@ -56,17 +56,40 @@ a:visited {
     text-align: center;
 }
 
-#newcolor {
-    width: 500px;
-    height: 200px;
+
+$w:400px;$h:200px;
+
+.newcolor {
+    width: $w;
+    height: $h;
     line-height: 1rem;
     border: 2px solid yellow;
 }
-.esdiv{
-   background-image: url(nero4.jpg);
-   width: 500px;
-   height: 200px;
+.esdivtb{
+   display: inline-block;
+   background-image: url(black.jpg);
+   width: $w;
+   height: $h;
 }
+.esdivtw{
+    display: inline-block;
+    background-image: url(white.gif);
+    width: $w;
+    height: $h;
+ }
+ .esdivb{
+    display: inline-block;
+    background-color: #000;
+    width: $w;
+    height: $h;
+ }
+ .esdivw{
+    display: inline-block;
+    background-color: #fff;
+    width: $w;
+    height: $h;
+ }
+ 
 .estext{
    color: #fff;
 }

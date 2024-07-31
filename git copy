@@ -1,0 +1,67 @@
+#!/bin/bash
+: << 'COMMENT'
+COMMENT
+
+
+: << 'COMMENT'
+    git status
+    git add .
+    git commit -m "${NOTE}"
+    git branch main
+    git push -u origin main
+    git push -u origin main -f
+    git log
+settings,logo,image desc,submenu
+COMMENT
+clear
+
+
+command="git status"
+echo "=====================================================================================>command:"
+echo "$command"
+eval "$command"
+echo "-------------------------------------------------------------------------------------"
+echo
+echo
+
+command="git add ."
+echo "=====================================================================================>command:" "$command"
+eval "$command"
+echo "-------------------------------------------------------------------------------------"
+echo
+echo
+
+echo "Write commit message or ENTER to exit"
+read -r key
+if [[ $key = "" ]]; then
+    echo
+    #echo "=================>You have to enter commit message<=================="
+    exit 0
+else
+    NOTEOK=${key}
+fi
+
+command="git commit -m '${NOTEOK}'"
+echo "=====================================================================================>command:" "$command"
+eval "$command"
+echo "-------------------------------------------------------------------------------------"
+echo
+echo
+
+command="git push -u origin main"
+echo "=====================================================================================>command:" "$command"
+eval "$command"
+echo "-------------------------------------------------------------------------------------"
+echo
+echo
+
+echo "done!"
+echo "1) For log"
+read -r -n 1 key
+if [[ $key = 1 ]]; then
+    git log
+    #git log --reverse
+    #git log --reverse --decorate=full HEAD ^origin
+    #git log --decorate=full HEAD ^origin
+fi
+

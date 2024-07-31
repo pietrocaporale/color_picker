@@ -7,10 +7,17 @@
     $linear_gradient="_._";
     $butexe = filter_input(INPUT_POST, 'butexe', FILTER_DEFAULT);
 
-    $hvar = (int)filter_input(INPUT_POST, 'hvar', FILTER_DEFAULT);
-    $svar = (int)filter_input(INPUT_POST, 'svar', FILTER_DEFAULT);
-    $lvar = (int)filter_input(INPUT_POST, 'lvar', FILTER_DEFAULT);
-    $ovar = (int)filter_input(INPUT_POST, 'ovar', FILTER_DEFAULT);
+    
+    $hvar = filter_input(INPUT_POST, 'hvar', FILTER_DEFAULT);
+    $svar = filter_input(INPUT_POST, 'svar', FILTER_DEFAULT);
+    $lvar = filter_input(INPUT_POST, 'lvar', FILTER_DEFAULT);
+    $ovar = filter_input(INPUT_POST, 'ovar', FILTER_DEFAULT);
+
+
+    $hvar = ($hvar == "") ? 30 : (int)$hvar;
+    $svar = ($svar == "") ? 30 : (int)$svar;
+    $lvar = ($lvar == "") ? 30 : (int)$lvar;
+    $ovar = ($hvar == "") ? 30 : (int)$ovar;
 
     $butcolpicker = filter_input(INPUT_POST, 'butcolpicker', FILTER_DEFAULT);
     $setcolor = filter_input(INPUT_POST, 'setcolor', FILTER_DEFAULT);
@@ -19,10 +26,8 @@
         $color_picker = "#fff";
         $setcolor = "";
     }
-    $hvar = 30;
-    $svar = 33;
-    $lvar = -21;
-    $ovar = 0;
+    $newclass="";
+    $textshow="<br><br>Text to show";
     ?>
  <!DOCTYPE html>
  <html lang="en">
@@ -92,8 +97,25 @@
         ?>
         <?php echo "<pre>".$linear_gradient."</pre>"; ?>
      </div>
-     <div class="center esdiv">
-     <div id="newcolor" class="center <?php echo $newclass; ?>"></div>
+     <div class="center">
+
+     <div id="" class="">
+        <label for="settextcolor">Set text color</label>
+        <input id="settextcolor" class="basic" type="text" value="#fff" />
+    </div>
+         
+        <div class="center esdivtb">
+            <div id="newcolor" class="newcolor center <?php echo $newclass; ?>"><?php echo $textshow; ?></div>
+        </div>
+        <div class="center esdivtw">
+            <div id="newcolor" class="newcolor center <?php echo $newclass; ?>"><?php echo $textshow; ?></div>
+        </div>
+        <div class="center esdivb">
+            <div id="newcolor" class="newcolor center <?php echo $newclass; ?>"><?php echo $textshow; ?></div>
+        </div>
+        <div class="center esdivw">
+            <div id="newcolor" class="newcolor center <?php echo $newclass; ?>"><?php echo $textshow; ?></div>
+        </div>
      </div>
 
  </body>

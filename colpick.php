@@ -108,6 +108,14 @@
         //$(document.body).css('background-color', color)
       }
     });
+    $(".basic").spectrum({
+      //color: 'white',
+      preferredFormat: 'hex',
+      change: function(color) {
+        //$('.estext').css('background-color', color)
+        $(".newcolor").css({ "color": color });
+      }
+    });
 
 
   })
@@ -121,7 +129,7 @@
 
   <input type="hidden" id="setcolor" name="setcolor" value="">
   <input type="hidden" id="butcolpicker" name="butcolpicker" value="">
-  <input type='color' id='color-picker' name='color_picker' value="" />
+  <input type='text' id='color-picker' name='color_picker' value="" />
 </form>
 <div id="boxbuts">
   <label>Variation</label><br>
